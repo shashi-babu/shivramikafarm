@@ -189,6 +189,72 @@ color:white;
 z-index:9999;
 }
 
+.plan-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.plan-card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+cursor:pointer;
+transition:0.4s;
+position:relative;
+overflow:hidden;
+}
+
+.plan-card:hover{
+transform:translateY(-10px);
+}
+
+.plan-card h3{
+color:#2e7d32;
+text-align:center;
+margin-bottom:10px;
+}
+
+.plan-details{
+max-height:0;
+overflow:hidden;
+transition:max-height 0.6s ease;
+}
+
+.plan-card:hover .plan-details{
+max-height:500px;
+}
+
+.plan-details p{
+margin:10px 0;
+color:#555;
+}
+
+.plan-btn{
+display:block;
+text-align:center;
+background:#2e7d32;
+color:white;
+text-decoration:none;
+padding:12px;
+margin-top:15px;
+border-radius:8px;
+font-weight:bold;
+}
+
+.popular-badge{
+position:absolute;
+top:15px;
+right:15px;
+background:#ff9800;
+color:white;
+padding:5px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+}
+  
 @media(max-width:768px){
 
 .hero-content h1{
@@ -403,32 +469,88 @@ style="width:100%;height:220px;object-fit:cover;border-radius:10px;">
 </div>
 
 </section>
-
+<!-------------subscription-plan------------------------------------>
 <section class="section" id="plans">
 
 <h2 class="title">Subscription Plans</h2>
 
-<div class="grid">
+<div class="plan-container">
 
-<div class="card">
-<h3>Daily Plan</h3>
-<p>Fresh milk every day.</p>
+<div class="plan-card">
+
+<h3>🥛 Daily Plan</h3>
+
+<div class="plan-details">
+
+<p>✓ Fresh milk delivered every day</p>
+<p>✓ Choose 1L, 2L, 3L or more</p>
+<p>✓ Morning delivery available</p>
+<p>✓ Flexible quantity changes</p>
+<p>✓ WhatsApp support</p>
+<p>✓ Best for regular family consumption</p>
+
+<a href="https://wa.me/919304811724?text=I%20am%20interested%20in%20the%20Daily%20Plan"
+class="plan-btn">
+Subscribe Now
+</a>
+
 </div>
 
-<div class="card">
-<h3>Weekly Plan</h3>
-<p>Convenient weekly delivery.</p>
 </div>
 
-<div class="card">
-<h3>Monthly Plan</h3>
-<p>Best value subscription.</p>
+<div class="plan-card">
+
+<h3>📅 Weekly Plan</h3>
+
+<div class="plan-details">
+
+<p>✓ 7-day subscription package</p>
+<p>✓ Fixed weekly schedule</p>
+<p>✓ Lower delivery charges</p>
+<p>✓ Milk, Paneer, Curd & Ghee available</p>
+<p>✓ Easy renewal every week</p>
+<p>✓ Suitable for medium-size families</p>
+
+<a href="https://wa.me/919304811724?text=I%20am%20interested%20in%20the%20Weekly%20Plan"
+class="plan-btn">
+Subscribe Now
+</a>
+
+</div>
+
+</div>
+
+<div class="plan-card">
+
+<div class="popular-badge">
+Most Popular
+</div>
+
+<h3>⭐ Monthly Plan</h3>
+
+<div class="plan-details">
+
+<p>✓ 30-day premium subscription</p>
+<p>✓ Maximum savings and discounts</p>
+<p>✓ Guaranteed daily delivery</p>
+<p>✓ Priority customer support</p>
+<p>✓ Exclusive festival offers</p>
+<p>✓ Best choice for long-term customers</p>
+<p>✓ Special rewards for loyal members</p>
+
+<a href="https://wa.me/919304811724?text=I%20am%20interested%20in%20the%20Monthly%20Plan"
+class="plan-btn">
+Subscribe Now
+</a>
+
+</div>
+
 </div>
 
 </div>
 
 </section>
-
+<!-------------subscription-plan------------------------------------>
 <section class="section" id="gallery">
 
 <h2 class="title">Farm Gallery</h2>
