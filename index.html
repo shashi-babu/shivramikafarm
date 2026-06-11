@@ -504,55 +504,172 @@ Chat on WhatsApp
 </footer>
 
 <!---------popform---------->  
-<div id="surveyPopup" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:white;padding:20px;border-radius:10px;box-shadow:0 0 20px rgba(0,0,0,0.3);z-index:99999;width:90%;max-width:400px;">
-    <h2>Quick Survey</h2>
+<div id="surveyPopup" style="
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,.3);
+z-index:99999;
+width:95%;
+max-width:500px;
+max-height:90vh;
+overflow-y:auto;">
 
-    <input id="name" type="text" placeholder="Your Name" style="width:100%;padding:10px;margin:5px 0;">
+<h2 style="color:#2e7d32;text-align:center;margin-bottom:10px;">
+🐄 ShivRamika Farm Survey
+</h2>
 
-    <input id="phone" type="text" placeholder="Phone Number" style="width:100%;padding:10px;margin:5px 0;">
+<p style="text-align:center;color:#666;margin-bottom:20px;">
+Help us serve you better and get special offers.
+</p>
 
-    <input id="city" type="text" placeholder="City" style="width:100%;padding:10px;margin:5px 0;">
+<input id="name" type="text" placeholder="Full Name"
+style="width:100%;padding:12px;margin-bottom:10px;border:1px solid #ddd;border-radius:8px;">
 
-    <input id="milk" type="text" placeholder="Daily Milk Requirement" style="width:100%;padding:10px;margin:5px 0;">
+<input id="phone" type="tel" placeholder="Mobile Number"
+style="width:100%;padding:12px;margin-bottom:10px;border:1px solid #ddd;border-radius:8px;">
 
-    <button onclick="sendSurvey()" style="background:#2e7d32;color:white;padding:12px;border:none;width:100%;margin-top:10px;">
-        Submit
-    </button>
+<input id="city" type="text" placeholder="Village / City / District"
+style="width:100%;padding:12px;margin-bottom:10px;border:1px solid #ddd;border-radius:8px;">
 
-    <button onclick="closeSurvey()" style="margin-top:10px;width:100%;">
-        Close
-    </button>
+<label><b>Which product do you like?</b></label>
+
+<select id="product"
+style="width:100%;padding:12px;margin:8px 0 12px;border-radius:8px;border:1px solid #ddd;">
+
+<option>A2 Milk</option>
+<option>Desi Ghee</option>
+<option>Paneer</option>
+<option>Curd</option>
+<option>Butter</option>
+<option>All Products</option>
+
+</select>
+
+<label><b>Daily Milk Requirement</b></label>
+
+<select id="milk"
+style="width:100%;padding:12px;margin:8px 0 12px;border-radius:8px;border:1px solid #ddd;">
+
+<option>1 Litre</option>
+<option>2 Litres</option>
+<option>3 Litres</option>
+<option>5 Litres</option>
+<option>10+ Litres</option>
+
+</select>
+
+<label><b>Interested in Monthly Subscription?</b></label>
+
+<select id="subscription"
+style="width:100%;padding:12px;margin:8px 0 12px;border-radius:8px;border:1px solid #ddd;">
+
+<option>Yes</option>
+<option>No</option>
+<option>Need More Information</option>
+
+</select>
+
+<label><b>How did you hear about us?</b></label>
+
+<select id="source"
+style="width:100%;padding:12px;margin:8px 0 12px;border-radius:8px;border:1px solid #ddd;">
+
+<option>Google</option>
+<option>Facebook</option>
+<option>Instagram</option>
+<option>WhatsApp</option>
+<option>Friend / Relative</option>
+<option>Other</option>
+
+</select>
+
+<textarea id="message"
+placeholder="Any suggestions or requirements..."
+style="width:100%;height:90px;padding:12px;border:1px solid #ddd;border-radius:8px;margin-bottom:15px;"></textarea>
+
+<button onclick="sendSurvey()"
+style="
+width:100%;
+padding:14px;
+background:#2e7d32;
+color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;">
+Submit Survey
+</button>
+
+<button onclick="closeSurvey()"
+style="
+width:100%;
+padding:12px;
+margin-top:10px;
+background:#eee;
+border:none;
+border-radius:10px;
+cursor:pointer;">
+Close
+</button>
+
 </div>
 
 <script>
+
 setTimeout(function(){
-    document.getElementById('surveyPopup').style.display='block';
+document.getElementById('surveyPopup').style.display='block';
 },10000);
 
 function closeSurvey(){
-    document.getElementById('surveyPopup').style.display='none';
+document.getElementById('surveyPopup').style.display='none';
 }
 
 function sendSurvey(){
 
-    let name=document.getElementById('name').value;
-    let phone=document.getElementById('phone').value;
-    let city=document.getElementById('city').value;
-    let milk=document.getElementById('milk').value;
+let name=document.getElementById('name').value;
+let phone=document.getElementById('phone').value;
+let city=document.getElementById('city').value;
+let product=document.getElementById('product').value;
+let milk=document.getElementById('milk').value;
+let subscription=document.getElementById('subscription').value;
+let source=document.getElementById('source').value;
+let message=document.getElementById('message').value;
 
-    let message=
-`New Survey Response
+let text=`🐄 NEW CUSTOMER SURVEY
 
 Name: ${name}
-Phone: ${phone}
-City: ${city}
-Daily Milk Requirement: ${milk}`;
 
-    window.open(
-      'https://wa.me/919304811724?text='+encodeURIComponent(message),
-      '_blank'
-    );
+Phone: ${phone}
+
+Location: ${city}
+
+Interested Product: ${product}
+
+Daily Milk Requirement: ${milk}
+
+Monthly Subscription: ${subscription}
+
+Found Us Through: ${source}
+
+Message:
+${message}`;
+
+window.open(
+'https://wa.me/919304811724?text='+encodeURIComponent(text),
+'_blank'
+);
+
+closeSurvey();
+
 }
+
 </script>
 <!---------popform---------->  
 
